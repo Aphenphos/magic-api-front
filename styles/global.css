@@ -1,0 +1,43 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    background-color: rgb(60,60,60);
+    color: white;
+}
+
+header {
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(15, 50, 200);
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 2rem;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+input {
+    background-color: rgb(20, 20, 20);
+    border: none;
+    box-shadow: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#logout {
+    position: absolute;
+    right: 10px;
+    background-color: rgb(210, 70, 70);
+    outline: none;
+    border: none;
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+}
