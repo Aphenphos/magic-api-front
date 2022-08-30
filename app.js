@@ -1,8 +1,30 @@
-// import functions and grab DOM elements
+const signUpForm = document.getElementById('user-input');
+const signInForm = document.getElementById('existing-user-input');
+import { signUpUser, signInUser, redirectLoggedInUsers } from './utils/user-utils.js';
 
-// let state
 
-// set event listeners 
-  // get user input
-  // use user input to update state 
-  // update DOM to reflect the new state
+async function onPageLoad() {
+    redirectLoggedInUsers();
+}
+
+signUpForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(signUpForm);
+    await signUpUser({
+        email: formData.get('email'),
+        password: formData.get('password'),
+    });
+    signUpForm.reset();
+});
+
+signInForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(signInForm);
+    await signInUser({
+        email: formData.get('email'),
+        password: formData.get('password'),
+    });
+    signInForm.reset();
+});
+
+onPageLoad();  
