@@ -6,3 +6,6 @@ export async function checkIfNull(defaultValue, ifNotNull) {
     return displayedValue;
 }
 
+export async function displayPrices(USD, USDFoil, EUR, EURFoil) {
+    
+}
