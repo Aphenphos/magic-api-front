@@ -1,4 +1,4 @@
-import { checkIfNull, displayPrices, displayLegalities } from '../utils/utils.js';
+import { displayPrices, displayLegalities } from '../utils/utils.js';
 
 const defaultImage = '/utils/assets/default-image.webp';
 
@@ -13,11 +13,11 @@ export default async function renderCardDetails(card, root) {
         cardPic = card.image_uris.normal;
     }
     image_uri.src = cardPic;
+    image_uri.classList.add('card-picture');
 
     
     const name = document.createElement('h1');
     name.textContent = card.name;
-
 
     const typeLine = document.createElement('h2');
     typeLine.textContent = card.type_line;

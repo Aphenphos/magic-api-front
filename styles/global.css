@@ -46,3 +46,30 @@ input {
 #new-line {
     white-space: pre-line;
 }
+
+.card-with-details {
+}
+.card {
+    position: relative;
+    width: 100%;
+}
+
+.card-preview {
+    position: relative;
+}
+
+.card .card-preview {
+    width: 20%;
+}
+
+.card .addButton {
+    display: none;
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    top: 50%
+}
+
+.card-preview:hover + .addButton {
+    display: block;
+}
