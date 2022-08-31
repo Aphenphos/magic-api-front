@@ -42,3 +42,7 @@ input {
     color: white;
     border-radius: 5px;
 }
+
+#new-line {
+    white-space: pre-line;
+}
