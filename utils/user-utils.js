@@ -44,6 +44,8 @@ export async function getUser() {
     if (resp.ok) {
         const user = await resp.json();
         return user;
+    } else {
+        console.log('you arent a user');
     }
 }
 
