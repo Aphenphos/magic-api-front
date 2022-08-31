@@ -1,3 +1,4 @@
+
 const BASE_URL = 'http://api.scryfall.com';
 
 export async function searchCards(uSearchInput) {
@@ -35,7 +36,26 @@ export async function getCard(cardID) {
         console.log(data);
         return data;
     }
+}
+
+export async function getCardByParams(type) {
+    const resp = await fetch(`${BASE_URL}/cards/search?q=%3A${type}`, {
+        method: 'GET'
+    });
+    if (resp.ok) {
+        const data = await resp.json();
+        console.log(data);
+        return data;
+    }
+}
+
+
+
+
+
+
+
 
  
-}
+
  
