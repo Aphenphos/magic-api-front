@@ -14,8 +14,13 @@ function Card({ card }) {
 
     const img = document.createElement('img');
     img.src = card.image_uri;
+    img.classList.add('card-preview');
 
-    a.append(img);
+    const addCardButton = document.createElement('button');
+    addCardButton.textContent = 'Add Card';
+    addCardButton.classList.add('addButton');
+
+    a.append(img, addCardButton);
     
     return a;
 }

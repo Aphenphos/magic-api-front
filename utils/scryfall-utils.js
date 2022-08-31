@@ -44,8 +44,23 @@ export async function getCardByParams(type) {
     });
     if (resp.ok) {
         const data = await resp.json();
-        console.log(data);
-        return data;
+        let loopAmount = Math.min(data.total_cards, 100);
+        let cards = [];
+        let defaultImage = '/utils/assets/default-image.webp';
+        for (let i = 0; i < loopAmount; i++) {
+            let cardPic = defaultImage;
+            let cardID = data.data[i].id;
+            console.log(cardID);
+            if (data.data[i].image_uris !== undefined) {
+                cardPic = data.data[i].image_uris.normal;
+            }
+            cards.push({
+                id: cardID,
+                image_uri: cardPic 
+            });
+        }
+        console.log(cards);
+        return cards;
     }
 }
 

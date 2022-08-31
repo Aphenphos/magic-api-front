@@ -1,4 +1,4 @@
-import { checkIfNull } from '../utils/utils.js';
+import { displayPrices, displayLegalities } from '../utils/utils.js';
 
 const defaultImage = '/utils/assets/default-image.webp';
 
@@ -13,11 +13,11 @@ export default async function renderCardDetails(card, root) {
         cardPic = card.image_uris.normal;
     }
     image_uri.src = cardPic;
+    image_uri.classList.add('card-picture');
 
     
     const name = document.createElement('h1');
     name.textContent = card.name;
-
 
     const typeLine = document.createElement('h2');
     typeLine.textContent = card.type_line;
@@ -40,7 +40,8 @@ export default async function renderCardDetails(card, root) {
 
 
     const legalities = document.createElement('h2');
-    legalities.textContent = Object.values(card.legalities);
+    legalities.setAttribute('id', 'new-line');
+    legalities.textContent = await displayLegalities(Object.entries(card.legalities));
 
 
 
@@ -49,11 +50,7 @@ export default async function renderCardDetails(card, root) {
 
 
     const prices = document.createElement('h2');
-    let priceUSD = await checkIfNull('', card.prices.usd);
-    let priceUSDFoil = await checkIfNull('', card.prices.usd_foil);
-    let priceEUR = await checkIfNull('', card.prices.eur);
-    let priceEURFoil = await checkIfNull('', card.prices.eur_foil);
-    prices.textContent = `$ ${priceUSD} ${priceUSDFoil} € ${priceEUR} ${priceEURFoil}`;
+    prices.textContent = await displayPrices(card.prices.usd, card.prices.usd_foil, card.prices.eur, card.prices.eur_foil);
 
 
     container.append(image_uri, name, typeLine, oracleText, manaCost, cmc, colors, legalities, setName, prices);
