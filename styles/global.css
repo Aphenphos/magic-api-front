@@ -56,10 +56,10 @@ input {
 }
 
 header a {
-    color: rgb(255, 72, 0);
+    color: rgb(17, 17, 17);
     margin-left: 2em;
     font-size: 35px;
-    text-shadow: 2px 2px 0px #3F7FBF;
+    text-shadow: 2px 2px 0px #e20000;
     mix-blend-mode: screen;
     animation: fade 2.5s linear forwards;
   }
@@ -88,4 +88,19 @@ a img {
     border-radius: 2rem;
     margin: 1em;
 }
+
+#mtg-cards-image {
+    display: flex;
+    align-items: center;
+    max-width: 75px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 1rem;
+}
+
+#mtg-header {
+    display: flex;
+    align-items: center;
+}
+ 
 
