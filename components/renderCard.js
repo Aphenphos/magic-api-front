@@ -1,7 +1,9 @@
+import { checkIfNull } from '../utils/utils.js';
+
 const defaultImage = '/utils/assets/default-image.webp';
 
 
-export default function renderCardDetails(card) {
+export default async function renderCardDetails(card, root) {
     const container = document.createElement('div');
     container.classList.add('card-with-details');
 
@@ -10,20 +12,51 @@ export default function renderCardDetails(card) {
     if (card.image_uris !== undefined) {
         cardPic = card.image_uris.normal;
     }
-    image_uri.src = card.image_uri.normal;
-    console.log(image_uri);
+    image_uri.src = cardPic;
+
     
-    const name = document.createElement('h2');
+    const name = document.createElement('h1');
     name.textContent = card.name;
-    console.log(card.name);
 
 
-    // type_line 
-    // oracle_text 
-    // mana_cost 
-    // cmc 
-    // colors 
-    // legalities 
-    // set_name
-    // prices 
+    const typeLine = document.createElement('h2');
+    typeLine.textContent = card.type_line;
+
+
+    const oracleText = document.createElement('h2');
+    oracleText.textContent = card.oracle_text;
+
+
+    const manaCost = document.createElement('h2');
+    manaCost.textContent = card.mana_cost;
+
+
+    const cmc = document.createElement('h2');
+    cmc.textContent = card.cmc;
+
+
+    const colors = document.createElement('h2');
+    colors.textContent = card.colors;
+
+
+    const legalities = document.createElement('h2');
+    legalities.textContent = Object.values(card.legalities);
+
+
+
+    const setName = document.createElement('h3');
+    setName.textContent = card.set_name;
+
+
+    const prices = document.createElement('h2');
+    let priceUSD = await checkIfNull('', card.prices.usd);
+    let priceUSDFoil = await checkIfNull('', card.prices.usd_foil);
+    let priceEUR = await checkIfNull('', card.prices.eur);
+    let priceEURFoil = await checkIfNull('', card.prices.eur_foil);
+    prices.textContent = `$ ${priceUSD} ${priceUSDFoil} € ${priceEUR} ${priceEURFoil}`;
+
+
+    container.append(image_uri, name, typeLine, oracleText, manaCost, cmc, colors, legalities, setName, prices);
+    root.append(container);
+    return container;
 }

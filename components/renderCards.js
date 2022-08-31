@@ -1,7 +1,6 @@
 export default function createCards(root) {
     return (cards) => {
         root.innerHTML = '';
-        console.log(cards);
         for (const card of cards) {
             root.append(Card({ card }));
         }
