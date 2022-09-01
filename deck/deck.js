@@ -16,7 +16,7 @@ const deckPin = document.querySelector('#pin');
 let cards = [{}];
 
 async function handlePageLoad() {
-    redirectNonUsers();
+    await redirectNonUsers();
     cards = await getDeckWithCards(deckID);
     createDeck(deckPin);
     console.log(cards);

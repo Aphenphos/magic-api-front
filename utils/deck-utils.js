@@ -33,7 +33,6 @@ export async function getDecks() {
             Accept: 'application/json',
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify(),
         credentials: 'include',
     });
     return await resp.json();
@@ -46,8 +45,10 @@ export async function getDeckWithCards(deckID) {
             Accept: 'application/json',
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify(),
         credentials: 'include',
     });
-    return await resp.json();
+    if (resp.ok) {
+        return console.log(resp.json());
+    // return await resp.json();
+    }
 }
