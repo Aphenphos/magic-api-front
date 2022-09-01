@@ -1,6 +1,4 @@
-import { addCardFromPreview } from '../utils/utils.js';
-
-export default function createCards(root) {
+export default function createDeck(root) {
     return (cards) => {
         root.innerHTML = '';
         for (const card of cards) {
@@ -21,15 +19,8 @@ function Card({ card }) {
     img.src = card.image_uri;
     img.classList.add('card-preview');
 
-    const addCardButton = document.createElement('button');
-    addCardButton.textContent = 'Add Card';
-    addCardButton.classList.add('addButton');
-    addCardButton.addEventListener('click', () => {
-        const cardSKID = card.id;
-        
-    });
     a.append(img);
-    container.append(a, addCardButton);
+    container.append(a);
     
     return container;
 }

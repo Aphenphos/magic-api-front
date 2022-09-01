@@ -40,4 +40,5 @@ export async function displayLegalities(legalities) {
 
 export async function addCardFromPreview(cardSKID) {
     
+
 }
