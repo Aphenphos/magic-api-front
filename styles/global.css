@@ -47,6 +47,11 @@ input {
     white-space: pre-line;
 }
 
+#card-display {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .card-with-details {
 }
 .card {
@@ -61,14 +66,77 @@ input {
     width: 100%;
 }
 
-.card .addButton {
-    display: none;
+.addButton {
     position: absolute;
     text-align: center;
-    left: 50%;
-    top: 50%
+    left: 33%;
+    bottom: 0;
 }
 
-.card-preview:hover + .addButton {
-    display: block;
+.card:hover + .addButton, .addButton:hover {
+    display: inline-block;
+    background-color: black;
 }
+
+header a {
+    color: rgb(17, 17, 17);
+    margin-left: 2em;
+    font-size: 35px;
+    text-shadow: 2px 2px 0px #e20000;
+    mix-blend-mode: screen;
+    animation: fade 2.5s linear forwards;
+  }
+  
+  @keyframes fade {
+      0% {
+          opacity: 0
+      }
+  
+      100% {
+          opacity: 1;
+      }
+  }
+
+
+a img {
+    margin: 1rem; 
+    width:300px;
+    border-radius: 1rem;
+    margin-top: 1rem;
+}
+
+.card-with-details h1, h2, h3 {
+    display: flex;
+    justify-content: center;
+    border-radius: 2rem;
+    margin: 1em;
+}
+
+#mtg-cards-image {
+    display: flex;
+    align-items: center;
+    max-width: 75px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 1rem;
+}
+
+#mtg-header {
+    display: flex;
+    align-items: center;
+}
+  
+  .content h2 {
+    color: #fff;
+    font-size: 1em;
+    transform: translate(-50%, -50%);
+  }
+  
+  .content h2:nth-child(1) {
+    color: transparent;
+    -webkit-text-stroke: 2px #03a9f4;
+  }
+  
+
+  
+
