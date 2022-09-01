@@ -43,76 +43,32 @@ input {
     border-radius: 5px;
 }
 
-#card-display {
-
+#new-line {
+    white-space: pre-line;
 }
 
-.card-with-details img {
-    margin:auto; 
-    width:300px;
-    display:block;
-    border-radius: 1rem;
-    margin-top: 1rem;
+.card-with-details {
+}
+.card {
+    position: relative;
+    width: 20%;
 }
 
-header a {
-    color: rgb(17, 17, 17);
-    margin-left: 2em;
-    font-size: 35px;
-    text-shadow: 2px 2px 0px #e20000;
-    mix-blend-mode: screen;
-    animation: fade 2.5s linear forwards;
-  }
-  
-  @keyframes fade {
-      0% {
-          opacity: 0
-      }
-  
-      100% {
-          opacity: 1;
-      }
-  }
-
-
-a img {
-    margin: 1rem; 
-    width:300px;
-    border-radius: 1rem;
-    margin-top: 1rem;
+.card-preview {
 }
 
-.card-with-details h1, h2, h3 {
-    display: flex;
-    justify-content: center;
-    border-radius: 2rem;
-    margin: 1em;
+.card .card-preview {
+    width: 100%;
 }
 
-#mtg-cards-image {
-    display: flex;
-    align-items: center;
-    max-width: 75px;
-    margin-left: 5px;
-    margin-right: 5px;
-    border-radius: 1rem;
+.card .addButton {
+    display: none;
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    top: 50%
 }
 
-#mtg-header {
-    display: flex;
-    align-items: center;
+.card-preview:hover + .addButton {
+    display: block;
 }
-  
-  .content h2 {
-    color: #fff;
-    font-size: 1em;
-    transform: translate(-50%, -50%);
-  }
-  
-  .content h2:nth-child(1) {
-    color: transparent;
-    -webkit-text-stroke: 2px #03a9f4;
-  }
-  
-
-  
