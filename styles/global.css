@@ -15,6 +15,7 @@ header {
     justify-content: center;
     gap: 1rem;
     font-size: 2rem;
+    max-height: 400px;
 }
 
 a {
@@ -76,6 +77,7 @@ input {
 
 header a {
     display: flex;
+    border: 1rem solid black;
     align-items: center;
     justify-content: center;
     max-width: 80vw;
@@ -126,6 +128,14 @@ a img {
     min-height: 55vh;
 }
   
-
+.content {
+    font-family: “Open Sans”, sans-serif;
+    color: #f5f5f5;
+    text-shadow: 0px -2px 4px whitesmoke, 0px -5px 10px yellow, 0px -10px 20px orangered, 0px -20px 40px #C33;
+    font-size: 25px;
+}
   
-
+#card-search {
+    margin-top: 15px;
+    margin-left: 5px;
+}
