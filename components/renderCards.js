@@ -1,3 +1,5 @@
+import { addCardFromPreview } from '../utils/utils.js';
+
 export default function createCards(root) {
     return (cards) => {
         root.innerHTML = '';
@@ -8,8 +10,11 @@ export default function createCards(root) {
 }
 
 function Card({ card }) {
+    const container = document.createElement('div');
+    container.classList.add('card');
+
     const a = document.createElement('a');
-    a.classList.add('card');
+    a.classList.add('card-link');
     a.href = `/card/index.html?id=${card.id}`;
 
     const img = document.createElement('img');
@@ -19,8 +24,12 @@ function Card({ card }) {
     const addCardButton = document.createElement('button');
     addCardButton.textContent = 'Add Card';
     addCardButton.classList.add('addButton');
-
-    a.append(img, addCardButton);
+    addCardButton.addEventListener('click', () => {
+        const cardSKID = card.id;
+        addCardFromPreview(cardSKID);
+    });
+    a.append(img);
+    container.append(a, addCardButton);
     
-    return a;
+    return container;
 }

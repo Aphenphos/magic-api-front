@@ -37,3 +37,7 @@ export async function displayLegalities(legalities) {
         .replaceAll(',', '');
     return displayedValue;
 }
+
+export async function addCardFromPreview(cardSKID) {
+    
+}

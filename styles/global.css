@@ -47,29 +47,33 @@ input {
     white-space: pre-line;
 }
 
+#card-display {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .card-with-details {
 }
 .card {
     position: relative;
-    width: 100%;
-}
-
-.card-preview {
-    position: relative;
-}
-
-.card .card-preview {
     width: 20%;
 }
 
-.card .addButton {
-    display: none;
-    position: absolute;
-    text-align: center;
-    left: 50%;
-    top: 50%
+.card-preview {
 }
 
-.card-preview:hover + .addButton {
-    display: block;
+.card .card-preview {
+    width: 100%;
+}
+
+.addButton {
+    position: absolute;
+    text-align: center;
+    left: 33%;
+    bottom: 0;
+}
+
+.card:hover + .addButton, .addButton:hover {
+    display: inline-block;
+    background-color: black;
 }
