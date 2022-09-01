@@ -10,13 +10,17 @@ header {
     margin: 0px;
     padding: 0px;
     background-color: rgb(60, 60, 200);
-    display: flex;
+    display: grid;
     align-items: center;
     justify-content: center;
     gap: 1rem;
     font-size: 2rem;
-    max-height: 400px;
+    max-height: 350px;
 }
+
+/* .header {
+    max-block-size: 350px;
+} */
 
 a {
     text-decoration: none;
@@ -81,9 +85,9 @@ header a {
     align-items: center;
     justify-content: center;
     max-width: 80vw;
-    color: rgb(17, 17, 17);
+    color: rgb(229, 0, 0);
     font-size: 35px;
-    text-shadow: 2px 2px 0px #e20000;
+    text-shadow: 1px 1px 1px #ffffff;
     mix-blend-mode: screen;
     animation: fade 2.5s linear forwards;
   }
@@ -125,7 +129,6 @@ a img {
 #mtg-header {
     display: grid;
     justify-items: center;
-    min-height: 55vh;
 }
   
 .content {
