@@ -10,7 +10,6 @@ header {
     margin: 0px;
     padding: 0px;
     background-color: rgb(60, 60, 200);
-    height: 10vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -50,16 +49,13 @@ input {
 #card-display {
     display: flex;
     flex-wrap: wrap;
+    align-content: space-between;
+    max-width: 95vw;
 }
 
-.card-with-details {
-}
 .card {
     position: relative;
     width: 20%;
-}
-
-.card-preview {
 }
 
 .card .card-preview {
@@ -79,8 +75,11 @@ input {
 }
 
 header a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 80vw;
     color: rgb(17, 17, 17);
-    margin-left: 2em;
     font-size: 35px;
     text-shadow: 2px 2px 0px #e20000;
     mix-blend-mode: screen;
@@ -122,20 +121,10 @@ a img {
 }
 
 #mtg-header {
-    display: flex;
-    align-items: center;
+    display: grid;
+    justify-items: center;
+    min-height: 55vh;
 }
-  
-  .content h2 {
-    color: #fff;
-    font-size: 1em;
-    transform: translate(-50%, -50%);
-  }
-  
-  .content h2:nth-child(1) {
-    color: transparent;
-    -webkit-text-stroke: 2px #03a9f4;
-  }
   
 
   
